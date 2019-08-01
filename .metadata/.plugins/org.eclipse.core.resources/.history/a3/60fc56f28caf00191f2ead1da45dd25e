@@ -1,0 +1,31 @@
+package com.rythmos.employeSpotlight.dao;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+import org.springframework.data.annotation.Id;
+
+@Entity
+@Table(name="Userprofile")
+ class UserProfile {
+	@Id
+@Column
+private String name;
+	
+@Column	
+private String email;
+
+@Column
+private String edu;
+
+@Column
+private String skills;
+
+@Column
+private String intersts;
+
+@Column 
+private String Experience;
+
+}

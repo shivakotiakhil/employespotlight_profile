@@ -1,0 +1,35 @@
+package com.rythmos.employeSpotlight.dao;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Component;
+
+import com.rythmos.employeSpotlight.request.EditJSONRequest;
+
+@Component
+public class EditDao {
+	@Autowired
+	private EditRepository editRepository;
+	
+	public ResponseEntity<?>  editUser(EditJSONRequest editJSONRequest) {
+	UserProfile user=new UserProfile();
+	user.setCert(editJSONRequest.getCert());
+	user.setDesc(editJSONRequest.getDesg());
+	user.setSkill(editJSONRequest.getSkill());
+	user.setExperience(editJSONRequest.getExperience());
+	user.setIntrests(editJSONRequest.getIntrests());
+	user.setEdu(editJSONRequest.getEdu());
+	
+	if(editRepository.save(user)!=null) 
+	{
+		return new ResponseEntity<String>("User reg Sucessfully",HttpStatus.OK);
+	}
+	else
+	{
+		return new ResponseEntity<String>("User Reg Unsucessfull",HttpStatus.INTERNAL_SERVER_ERROR);
+	}
+	
+
+}
+}

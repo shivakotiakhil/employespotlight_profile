@@ -1,0 +1,9 @@
+package com.rythmos.employeSpotlight.repository;
+
+import org.springframework.data.repository.CrudRepository;
+
+public class EditRepository {
+	public interface EditRepository extends CrudRepository<UserProfile,long> {
+		
+
+}

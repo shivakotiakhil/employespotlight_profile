@@ -1,0 +1,20 @@
+package com.rythmos.employeSpotlight.dao;
+
+public class EditDao {
+	@AutoWired
+	private EditRepository editRepository;
+	public ResponseEntity<?>  editUser(EditJSONRequest editJSONRequest) throws ParseException
+	{
+	User user=new User();
+	user.setname(editJSONRequest.getname());
+	user.setemail(editJSONRequest.getemail());
+	user.setskills(editJSONRequest.getskills());
+	user.setExperience(editJSONRequest.getExperience());
+	user.setintrests(editJSONRequest.getintrests());
+	user.setedu(editJSONRequest.getedu());
+	user.setid(editJSONRequest.getid());
+	
+	
+
+}
+}

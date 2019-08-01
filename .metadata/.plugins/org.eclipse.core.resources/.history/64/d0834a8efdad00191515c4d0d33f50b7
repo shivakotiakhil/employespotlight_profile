@@ -1,0 +1,13 @@
+package rythmos.a.maincontroller;
+
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class MainController {
+	@RequestMapping("/main")
+public string empDetails()
+{
+	return "details":
+	
+}
+}

@@ -1,0 +1,5 @@
+package com.rythmos.employeeSpotlight.repository;
+
+public class EditRepository {
+
+}

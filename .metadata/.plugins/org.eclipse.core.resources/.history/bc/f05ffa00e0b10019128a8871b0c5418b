@@ -1,0 +1,110 @@
+package com.rythmos.employeSpotlight.dao;
+
+import java.util.List;
+
+import javax.persistence.Column;
+import javax.persistence.ElementCollection;
+import javax.persistence.Embedded;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
+
+@Entity
+@Table(name = "Userprofile")
+class UserProfile {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id", updatable = false, nullable = false)
+	private String id;
+
+	@Column
+	private String name;
+
+	@Column
+	private String email;
+
+	@Column
+	private String edu;
+	
+	@ElementCollection
+    @LazyCollection(LazyCollectionOption.FALSE)
+    @Embedded
+	public List<String> skill;
+
+	@Column
+	public String intrests;
+
+	@Column
+	private String Experience;
+
+	
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getEdu() {
+		return edu;
+	}
+
+	public void setEdu(String edu) {
+		this.edu = edu;
+	}
+
+	public List<String> getSkill() {
+		return skill;
+	}
+
+	public void setSkill(List<String> string) {
+		this.skill = string;
+	}
+
+	public String getIntrests() {
+		return intrests;
+	}
+
+	public void setIntrests(String intrests) {
+		this.intrests = intrests;
+	}
+
+	public String getExperience() {
+		return Experience;
+	}
+
+	public void setExperience(String experience) {
+		Experience = experience;
+	}
+
+	@Override
+	public String toString() {
+		return "UserProfile [id=" + id + ", name=" + name + ", email=" + email + ", edu=" + edu + ", skill=" + skill
+				+ ", intrests=" + intrests + ", Experience=" + Experience + "]";
+	}
+
+}

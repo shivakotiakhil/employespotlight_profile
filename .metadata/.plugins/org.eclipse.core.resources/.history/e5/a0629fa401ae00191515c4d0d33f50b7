@@ -1,0 +1,12 @@
+package rythmos.a.employee;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class EmployeMain {
+	@RequestMapping("/main")
+public String id()
+{return "employeeMain";
+}
+}

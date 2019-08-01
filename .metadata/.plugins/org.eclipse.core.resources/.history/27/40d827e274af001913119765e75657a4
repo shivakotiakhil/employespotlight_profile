@@ -1,0 +1,29 @@
+package com.rythmos.employeSpotlight.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.rythmos.employeSpotlight.request.EditJSONRequest;
+import com.rythmos.employeSpotlight.service.EditService;
+
+
+@RestController
+public class EditController {
+	@Autowired
+	private EditService editService;
+//	@RequestMapping("/updateProfile")
+//	public ResponseEntity<String> getMessage(){
+//		return new ResponseEntity<String>("This is ProfilePage",HttpStatus.OK);
+//	}
+	@PutMapping("/updateProfile")
+	public ResponseEntity<?> editUser(@RequestBody EditJSONRequest editJSONRequest){
+	return editService.editUser(editJSONRequest);
+
+}
+}

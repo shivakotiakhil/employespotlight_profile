@@ -1,0 +1,54 @@
+package com.rythmos.employeSpotlight.request;
+
+public class EditJSONRequest {
+	private String name;
+	private String email;
+	private String skills;
+	private String Experience;
+	private String intrests;
+	private String edu;
+	private String id;
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String getSkills() {
+		return skills;
+	}
+	public void setSkills(String skills) {
+		this.skills = skills;
+	}
+	public String getExperience() {
+		return Experience;
+	}
+	public void setExperience(String experience) {
+		Experience = experience;
+	}
+	public String getIntrests() {
+		return intrests;
+	}
+	public void setIntrests(String intrests) {
+		this.intrests = intrests;
+	}
+	public String getEdu() {
+		return edu;
+	}
+	public void setEdu(String edu) {
+		this.edu = edu;
+	}
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
+
+}

@@ -1,0 +1,13 @@
+package com.rythmos.employeSpotlight.HomeController;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class Homecontroller {
+	@RequestMapping("/hello")  
+    public String getMessage(){  
+        return"Hello!";  
+
+}
+}

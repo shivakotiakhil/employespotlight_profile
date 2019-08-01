@@ -1,0 +1,12 @@
+package rythmos.a.employeeSearch;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class EmployeSearch {
+	@RequestMapping("/search")
+	public String id() {
+return "employesearch";
+}
+}

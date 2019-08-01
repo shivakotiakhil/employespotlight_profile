@@ -1,0 +1,37 @@
+package com.rythmos.employeSpotlight.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.web.PageableDefault;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.rythmos.employeSpotlight.dao.EditRepository;
+import com.rythmos.employeSpotlight.request.EditJSONRequest;
+import com.rythmos.employeSpotlight.service.EditService;
+import com.sun.xml.messaging.saaj.packaging.mime.internet.ParseException;
+
+
+@RestController
+public class EditController {
+	@Autowired
+	private EditService editService;
+	@Autowired
+	private EditRepository editRepository;
+	
+	@RequestMapping("/updateProfile")
+	public ResponseEntity<?> getMessage(@PathVariable String empId){
+		
+		return new ResponseEntity<>(editRepository.findById(empId),HttpStatus.OK);
+	}
+	@PutMapping("/updateProfile")
+	public ResponseEntity<?> editUser(@RequestBody EditJSONRequest editJSONRequest) throws ParseException{
+	return editService.editUser(editJSONRequest);
+
+}
+}

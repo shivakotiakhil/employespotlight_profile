@@ -1,0 +1,11 @@
+package com.rythmos.employeSpotlight.dao;
+
+@Entity
+public class UserProfile {
+
+	@Id
+	private String name;
+	private String email;
+	private String edu;
+	
+}

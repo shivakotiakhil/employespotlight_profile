@@ -1,0 +1,26 @@
+package com.rythmos.employeSpotlight.dao;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.security.SecurityProperties.User;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+
+public class EditDao {
+	@Autowired
+	private EditRepository editRepository;
+	public ResponseEntity<?>  editUser(EditJSONRequest editJSONRequest) throws ParseException
+	{
+	User user=new User();
+	user.setname(editJSONRequest.getname());
+	user.setemail(editJSONRequest.getemail());
+	user.setskills(editJSONRequest.getskills());
+	user.setExperience(editJSONRequest.getExperience());
+	user.setintrests(editJSONRequest.getintrests());
+	user.setedu(editJSONRequest.getedu());
+	user.setid(editJSONRequest.getid());
+	return new ResponseEntity<String>("This is Daopage",HttpStatus.OK);
+	
+	
+
+}
+}

@@ -1,0 +1,28 @@
+package com.rythmos.employeSpotlight.dao;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.security.SecurityProperties.User;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+
+import com.rythmos.employeSpotlight.repository.EditRepository;
+import com.rythmos.employeSpotlight.request.EditJSONRequest;
+
+public class EditDao {
+	@Autowired
+	private EditRepository editRepository;
+	public ResponseEntity<?>  editUser(EditJSONRequest editJSONRequest) {
+	User user=new User();
+	user.setName(editJSONRequest.getName());
+	/*user.setEmail(editJSONRequest.getEmail());
+	user.setSkills(editJSONRequest.getSkills());
+	user.setExperience(editJSONRequest.getExperience());
+	user.setIntrests(editJSONRequest.getIntrests());
+	user.setEdu(editJSONRequest.getEdu());
+	user.setId(editJSONRequest.getId());*/
+	return new ResponseEntity<String>("This is Daopage",HttpStatus.OK);
+	
+	
+
+}
+}

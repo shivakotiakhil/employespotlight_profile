@@ -1,0 +1,15 @@
+package com.rythmos.employeSpotlight.dao;
+
+import javax.persistence.Entity;
+
+import org.springframework.data.annotation.Id;
+
+@Entity
+public class UserProfile {
+	@Id
+private String name;
+private String email;
+private String edu;
+
+
+}

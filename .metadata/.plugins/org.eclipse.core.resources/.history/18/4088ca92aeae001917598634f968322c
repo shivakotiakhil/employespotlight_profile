@@ -1,0 +1,14 @@
+package com.example.demo;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController("/hello")
+public class HelloSample {
+	public ResponseEntity<String> message(){
+		System.out.println("Testing...............");
+		return new ResponseEntity("hi",HttpStatus.OK);
+
+}
+}
